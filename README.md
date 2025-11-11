@@ -1,2 +1,76 @@
-# rabbitmq-com-python
-RabbitMQ com Python
+# RabbitMQ com Python
+
+## Finalidade
+
+RabbitMQ é um sistema de mensageria (message broker) de código aberto, amplamente utilizado para enviar, receber e rotear mensagens entre diferentes aplicações de forma assíncrona entre sistemas distribuídos.
+
+## Modo Operacional
+
+Seu principal objetivo é garantir o envio confiável de mensagens entre produtores e consumidores, mesmo que esses componentes não estejam disponíveis ao mesmo tempo.
+
+## Cenário
+
+É ideal para cenários onde a comunicação precisa ser resiliente e tolerante a falhas, como em filas de mensagens.
+
+## Documentação
+
+- [Portal](https://www.rabbitmq.com/)
+- [Documentação para Python](https://www.rabbitmq.com/tutorials/tutorial-one-python)
+
+## Como funciona
+
+![Fluxograma](./img/fluxograma.png)
+
+## Instalação
+
+Instale usando o Docker, mas tem opção de instalação para Linux, Windows e demais.
+
+https://www.rabbitmq.com/docs/download
+
+```bash
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4-management
+```
+
+## Por dentro da plataforma
+
+Após instalado acesse `localhost:15672` e irá aparecer a tela de login.
+
+Caso seja o primeiro acesso, o login será o padrão: `username` guest e `password` guest.
+
+![Tela Login](./img/tela_login.png)
+
+Essa é a tela de início da aplicação:
+
+![Tela Início](./img/tela_inicio.png)
+
+## `Exchanges`
+
+Algumas `Exchanges` já vem por padrão:
+
+![Exchanges Padrão](./img/exchanges_padrao.png)
+
+Para cadatrar uma nova `Exchanges`:
+
+![Cadastrar Exchanges](./img/cadastrar_exchanges.png)
+
+Para ver os detalhes de uma `Exchanges` é só clicar nela na tela de listagens.
+
+## `Filas`
+
+![Listar Filas](./img/listar_filas.png)
+
+Para cadatrar uma nova `Fila`:
+
+![Cadastrar Fila](./img/cadastrar_fila.png)
+
+## Relacionando a `Exchange` com a `Fila`
+
+Acesse o painel e clique me listagem das `Filas` (`Queues and Streams`)
+
+Depois clique na fila que deseja relacionar:
+
+![Listar Filas](./img/listar_filas2.png)
+
+Na nova tela selecione `Bindings` e preencha com as informações da `Exchange` quer quer relacionar e clique em `Bind`:
+
+![Bindings](./img/bindings.png)
