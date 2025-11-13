@@ -53,6 +53,15 @@ Para cadatrar uma nova `Exchanges`:
 
 ![Cadastrar Exchanges](./img/cadastrar_exchanges.png)
 
+- `Name`:
+- `Type`:
+    - `direct`:
+    - `fanout`:
+    - `headers`:
+    - `topic`:
+    - `x-local-random`:
+- `Durability`:
+
 Para ver os detalhes de uma `Exchanges` é só clicar nela na tela de listagens.
 
 ## `Filas`
@@ -63,7 +72,13 @@ Para cadatrar uma nova `Fila`:
 
 ![Cadastrar Fila](./img/cadastrar_fila.png)
 
-## Relacionando a `Exchange` com a `Fila`
+- `Virtual host`:
+- `Type`:
+- `Name`:
+- `Durability`:
+- `Arguments`:
+
+## Relacionando (`Binding`) a `Exchange` com a `Fila`
 
 Acesse o painel e clique me listagem das `Filas` (`Queues and Streams`)
 
@@ -74,3 +89,24 @@ Depois clique na fila que deseja relacionar:
 Na nova tela selecione `Bindings` e preencha com as informações da `Exchange` quer quer relacionar e clique em `Bind`:
 
 ![Bindings](./img/bindings.png)
+
+Após clicar em `Bind` o relacionamento vai estar indicado conforme imagem abaixo:
+
+![Bindings](./img/relacionamento.png)
+
+## Routing Key
+
+Serve para direcionar as mensagens publicadas em um `exchange` (intercambiador) para as `filas` corretas.
+
+Quando um `produtor` envia uma mensagem para o RabbitMQ, ele `não manda diretamente para uma fila`, mas sim para um `exchange`.
+O `exchange` decide `para qual fila` (ou filas) essa mensagem vai, e usa o `routing key` para tomar essa decisão.
+
+Apenas se a `Exchange` for do tipo `direct`. Você define a `Routing Key` ao configurar o `Binding` da `Fila`.
+
+Dê um nome para o `Routing Key` e clique em `Bind`.
+
+![Bindings](./img/bindings.png)
+
+# Projeto
+
+## BOT para Mensagens pelo Telegram
