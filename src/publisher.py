@@ -34,4 +34,4 @@ class RabbitMQPublisher:
 
 
 rabbit_mq_publisher = RabbitMQPublisher()
-rabbit_mq_publisher.send_message({"msg": "Estou no Publisher"})
+rabbit_mq_publisher.send_message({"msg": "Testando o Consumer"})
