@@ -33,7 +33,7 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4-manag
 
 ## Por dentro da plataforma
 
-Após instalado acesse `localhost:15672` e irá aparecer a tela de login.
+Após instalado acesse http://localhost:15672/ e irá aparecer a tela de login.
 
 Caso seja o primeiro acesso, o login será o padrão: `username` guest e `password` guest.
 
