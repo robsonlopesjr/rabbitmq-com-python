@@ -29,15 +29,10 @@ class RabbitMQPConsumer:
         )
 
         channel = pika.BlockingConnection(connection_parameters).channel()
-        channel.queue_declare(
-            queue=self.__queue,
-            durable=True
-        )
+        channel.queue_declare(queue=self.__queue, durable=True)
 
         channel.basic_consume(
-            queue=self.__queue,
-            auto_ack=True,
-            on_message_callback=rabbitmq_callback
+            queue=self.__queue, auto_ack=True, on_message_callback=rabbitmq_callback
         )
 
         return channel

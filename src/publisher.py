@@ -1,6 +1,10 @@
 import pika
 import json
 
+from main.telegram_configs.credentials import credentials
+
+
+TOKEN = credentials.TELEGRAM_TOKEN
 
 class RabbitMQPublisher:
     def __init__(self) -> None:
@@ -35,3 +39,6 @@ class RabbitMQPublisher:
 
 rabbit_mq_publisher = RabbitMQPublisher()
 rabbit_mq_publisher.send_message({"msg": "Testando o Consumer"})
+
+url = f"https://api.telegram.org/bot{TOKEN}/getUpdates"
+print(url)
